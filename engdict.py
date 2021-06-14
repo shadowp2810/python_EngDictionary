@@ -10,7 +10,8 @@ print("The similarity between rain and rainn is %.2f" % (theSimilarity*100), "%.
 
 def to_format(my_str, group=3, char=','):    #to reformat the word with charecters
     my_str = str(my_str)
-    return char.join(my_str[i:i+group] for i in range(0, len(my_str), group))
+    my_str = my_str.replace('.', '')
+    return char.join(my_str[i:i+group] for i in range(0, (len(my_str)+1), group))
 
 def itsDefinitions(theWord):
     theWordLower = theWord.lower()       #The word is formated to match the dictionary keys. All letters made lowercase. upper for uppercase and title for first letter capitalized
